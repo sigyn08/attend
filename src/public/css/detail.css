@@ -1,0 +1,100 @@
+/* 全体レイアウト */
+.detail-container {
+    width: 100%;
+    max-width: 750px;
+    margin: 40px auto;
+    padding: 10px;
+}
+
+/* 見出し */
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    border-left: 6px solid #000;
+    padding-left: 12px;
+}
+
+/* カード全体 */
+.detail-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 0;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+/* 行 */
+.detail-row {
+    display: flex;
+    align-items: center;
+    padding: 18px 25px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+/* ラベル（左揃えのまま） */
+.detail-label {
+    width: 160px; /* 左側の幅を固定 */
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left; /* ← 左揃えを維持 */
+}
+
+/* 値（中央揃え） */
+.detail-value {
+    flex: 1; /* 右側いっぱいまで広げる */
+    text-align: center; /* ★ 値を中央寄せ */
+    font-size: 16px;
+}
+
+/* 時刻入力（中央揃え） */
+.time-input {
+    width: 120px;
+    padding: 6px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    text-align: center; /* 中央 */
+}
+
+/* "〜" のテキスト */
+.tilde {
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+/* 備考欄 */
+.note-input {
+    width: 100%;
+    max-width: 400px; /* 中央寄せされる幅 */
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    text-align: center; /* 中央寄せ */
+}
+
+/* 修正ボタン（中央寄せ） */
+.update-button {
+    margin-top: 30px;
+    margin-left: auto; /* ★ 右端に寄せる */
+    margin-right: 0;
+    display: block;
+    width: 120px;
+    padding: 12px 0;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.update-button:hover {
+    opacity: 0.8;
+}

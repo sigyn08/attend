@@ -1,0 +1,97 @@
+/* 全体 */
+.admin-list-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* タイトル（左の縦棒付き） */
+.title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 35px;
+    display: flex;
+    align-items: center;
+}
+
+.title::before {
+    content: "";
+    width: 6px;
+    height: 28px;
+    background: #000;
+    margin-right: 12px;
+    border-radius: 2px;
+}
+
+/* 月切り替えボックス */
+.month-selector {
+    background-color: #fff;
+    width: 100%;
+    padding: 14px 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+}
+
+/* 前月・翌月ボタン */
+.month-btn {
+    border: none;
+    background: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 6px 10px;
+    color: #444;
+}
+
+.month-btn:hover {
+    opacity: 0.7;
+}
+
+.current-month {
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* テーブル */
+.admin-list-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 15px;
+}
+
+.admin-list-table thead {
+    background: #f5f5f5;
+    border-bottom: 2px solid #e5e5e5;
+}
+
+.admin-list-table th,
+.admin-list-table td {
+    padding: 16px;
+    text-align: center;
+}
+
+.admin-list-table tr {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* 詳細リンク */
+.admin-list-table td:last-child a {
+    font-weight: 700;
+    text-decoration: none;
+    color: #000;
+}
+
+.admin-list-table td:last-child a:hover {
+    text-decoration: underline;
+}

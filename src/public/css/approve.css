@@ -1,0 +1,61 @@
+.approve-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.title::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 26px;
+    background-color: #000;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.approve-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* 行スタイル */
+.approve-table th,
+.approve-table td {
+    padding: 18px 24px;
+    font-size: 14px;
+}
+
+/* 左ラベル部分 */
+.approve-table th {
+    width: 20%;
+    background-color: #fafafa;
+    text-align: center;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    font-weight: normal;
+}
+
+/* 右側内容部分 */
+.approve-table td {
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+/* 最後の行はボーダー消し */
+.approve-table tr:last-child th,
+.approve-table tr:last-child td {
+    border-bottom: none;
+}

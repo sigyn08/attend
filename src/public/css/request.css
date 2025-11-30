@@ -1,0 +1,48 @@
+.request-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 35px;
+    display: flex;
+    align-items: center;
+}
+
+.request-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 15px;
+}
+
+.request-table thead {
+    background: #f5f5f5;
+    border-bottom: 2px solid #e5e5e5;
+}
+
+.request-table th,
+.request-table td {
+    padding: 16px;
+    text-align: center;
+}
+
+.request-table tr {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* 詳細リンク */
+.request-table td:last-child a {
+    font-weight: 700;
+    text-decoration: none;
+    color: #000;
+}
+
+.request-table td:last-child a:hover {
+    text-decoration: underline;
+}

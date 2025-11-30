@@ -1,0 +1,88 @@
+/* 全体レイアウト */
+.admin-detail-container {
+    width: 100%;
+    max-width: 750px;
+    margin: 40px auto;
+    padding: 10px;
+}
+
+/* 見出し */
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    border-left: 6px solid #000;
+    padding-left: 12px;
+}
+
+/* テーブル全体 */
+.admin-detail-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* テーブル行 */
+.admin-detail-table th,
+.admin-detail-table td {
+    padding: 12px 15px;
+    font-size: 16px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* 最後の行のボーダーを消す */
+.admin-detail-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* ラベル（左揃え） */
+.admin-detail-table th {
+    text-align: left;
+    font-weight: bold;
+    width: 160px;
+}
+
+/* 値（中央寄せ） */
+.admin-detail-table td {
+    text-align: center;
+}
+
+/* 時刻や備考欄用の入力（中央寄せ） */
+.time-input,
+.note-input {
+    width: 120px;
+    padding: 6px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.note-input {
+    max-width: 400px;
+}
+
+/* "〜" のテキスト */
+.tilde {
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+/* 修正ボタン（中央寄せ） */
+.update_button {
+    margin: 30px auto 0;
+    display: block;
+    width: 120px;
+    padding: 12px 0;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.update_button:hover {
+    opacity: 0.8;
+}

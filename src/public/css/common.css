@@ -1,0 +1,51 @@
+/* ヘッダー全体 */
+.header {
+    width: 100%;
+    height: 80px;
+    background-color: #000; /* 黒背景 */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    position: fixed; /* 常に上に固定 */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* ロゴ */
+.header__logo {
+    color: #fff; /* 白文字 */
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* ナビゲーション */
+.header__nav .nav__list {
+    display: flex;
+    gap: 30px; /* メニューの間隔 */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* 各メニュー */
+.nav__item a {
+    color: #fff; /* 白文字 */
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 0;
+    transition: opacity 0.2s;
+}
+
+/* ホバー時の動き */
+.nav__item a:hover {
+    opacity: 0.6;
+}
+
+/* スクロールして下のコンテンツが隠れないようにする */
+body {
+    padding-top: 80px;
+}

@@ -1,0 +1,61 @@
+body {
+    background: #f5f4f7;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+/* メインラッパー */
+.staff-container {
+    width: 80%;
+    margin: 80px auto;
+}
+
+/* タイトル */
+.title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 45px;
+    padding-left: 12px;
+    border-left: 5px solid #000;
+}
+
+/* テーブル全体 */
+.staff-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    font-size: 15px;
+}
+
+/* 見出し */
+.staff-table th {
+    background: #ffffff;
+    padding: 18px 0;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* 行 */
+.staff-table td {
+    padding: 18px 0;
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* 偶数行の背景を薄く */
+.staff-table tr:nth-child(even) {
+    background: #fafafa;
+}
+
+/* 詳細リンク */
+.staff-table a {
+    color: #000;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.staff-table a:hover {
+    opacity: 0.6;
+}

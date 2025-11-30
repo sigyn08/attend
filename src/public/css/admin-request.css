@@ -1,0 +1,86 @@
+body {
+    background: #f5f4f7;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+/* メインラッパー */
+.admin-request-container {
+    width: 80%;
+    margin: 80px auto;
+}
+
+/* タイトル */
+.title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 45px;
+    padding-left: 12px;
+    border-left: 5px solid #000;
+}
+
+/* 承認タブ */
+.approval {
+    width: 100%;
+    border-bottom: 1px solid #b8b8b8;
+    margin-bottom: 35px;
+}
+
+.approval_select {
+    display: flex;
+    gap: 65px;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 8px;
+}
+
+.approval_select li a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    color: #000;
+}
+
+.approval_select li a:hover {
+    opacity: 0.5;
+}
+
+/* === テーブル === */
+.admin-request-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    font-size: 15px;
+}
+
+/* ヘッダー */
+.admin-request-table th {
+    background: #ffffff;
+    padding: 18px 0;
+    font-weight: 600;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* 行 */
+.admin-request-table td {
+    padding: 18px 0;
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* 偶数行の薄い背景 */
+.admin-request-table tr:nth-child(even) {
+    background: #fafafa;
+}
+
+/* 詳細リンク */
+.admin-request-table a {
+    color: #000;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.admin-request-table a:hover {
+    opacity: 0.6;
+}

@@ -1,0 +1,122 @@
+/* 全体レイアウト */
+.attendance-container {
+    width: 100%;
+    height: calc(100vh - 80px); /* 上の黒いヘッダーを除く */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* 勤務外・勤務中 などのステータス */
+.status-badge {
+    background-color: #dcdcdc;
+    color: #555;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+/* 日付表示 */
+.attendance-date {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* 時刻 */
+.attendance-time {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+/* ボタン */
+.attendance-button-wrapper {
+    margin-top: 10px;
+}
+
+.attendance-button {
+    width: 180px; /* ボタン幅を広めに */
+    padding: 14px 0; /* 上下の余白 */
+    background-color: #000000; /* 黒背景 */
+    color: #ffffff; /* 白文字 */
+    font-size: 20px; /* 文字サイズ */
+    font-weight: bold; /* 太字 */
+    border: none; /* 枠なし */
+    border-radius: 12px; /* 角丸を強めに */
+    cursor: pointer; /* ポインタ */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* ふんわり影 */
+    transition: all 0.2s ease; /* ホバーの動き */
+}
+
+/* クリック時 */
+.attendance-button:active {
+    transform: translateY(0); /* 元に戻る */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* ボタンを横並びにするコンテナ */
+.attendanceend-button-wrapper {
+    display: flex;
+    justify-content: center; /* 中央寄せ */
+    gap: 20px; /* ボタン間の余白 */
+    margin-top: 20px;
+}
+
+/* 共通ボタンスタイル */
+.attendanceend-button,
+.break-button {
+    width: 160px;
+    padding: 14px 0;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* 退勤ボタン (黒) */
+.attendanceend-button {
+    background-color: #000;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* 休憩ボタン (灰) */
+.break-button {
+    background-color: #fff;
+    color: #000;
+}
+
+.attendanceend-container {
+    background-color: #eee;
+    width: 100%;
+    height: calc(100vh - 80px); /* 上の黒いヘッダーを除く */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.message {
+    font-weight: bold;
+}
+
+.attend-button {
+    width: 180px; /* ボタン幅を広めに */
+    padding: 14px 0; /* 上下の余白 */
+    background-color: #ffffff; /* 黒背景 */
+    color: #000000; /* 白文字 */
+    font-size: 20px; /* 文字サイズ */
+    font-weight: bold; /* 太字 */
+    border: none; /* 枠なし */
+    border-radius: 12px; /* 角丸を強めに */
+    cursor: pointer; /* ポインタ */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* ふんわり影 */
+    transition: all 0.2s ease; /* ホバーの動き */
+}
