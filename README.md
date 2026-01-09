@@ -1,5 +1,5 @@
 # 環境構築
-<h3>Dockerビルド</h3>
+<h2>Dockerビルド</h2>
 <h4>・git clone git@github.com:sigyn08/beginner.git</h4>
 <h4>・docker-compose up -d --build</h4>
 <h3>Laravel環境構築</h3>
