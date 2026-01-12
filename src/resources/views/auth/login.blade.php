@@ -7,7 +7,7 @@
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/login.css') }}?v={{ time() }}">
 @endsection
-@include('components.auth')
+@include('components.header')
 
 <!-- メインコンテンツ -->
 @section('content')

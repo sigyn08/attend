@@ -10,16 +10,26 @@
 
 @section('content')
 <div class="admin-list-container">
-    <h1 class="title">2025年11月24日の勤怠一覧</h1>
+    <h1 class="title">{{ $formattedDate }}の勤怠一覧</h1>
     <div class="month-selector">
-        <button class="month-btn prev-month">← 前月</button>
-
-        <div class="current-month">
-            <span class="calendar-icon">📅</span>
-            <span>{{ $current_month ?? '2023/06/01' }}</span>
+        <a href="{{ route('admin.attendance.list', ['date' => now()->subDay()->toDateString()]) }}" class="select-date">
+            ← 前日
+        </a>
+        <div class="calendar-wrapper">
+            <form method="GET" action="{{ url()->current() }}">
+                <label class="calendar-label">
+                    <input
+                        type="date"
+                        name="date"
+                        value="{{ request('date', now()->toDateString()) }}"
+                        onchange="this.form.submit()"
+                        class="calendar-input">
+                </label>
+            </form>
         </div>
-
-        <button class="month-btn next-month">翌月 →</button>
+        <a href="{{ route('admin.attendance.list', ['date' => now()->addDay()->toDateString()]) }}" class="select-date">
+            翌日 →
+        </a>
     </div>
 
     <table class="admin-list-table">
@@ -34,16 +44,49 @@
             </tr>
         </thead>
         <tbody>
+            @foreach ($users as $user)
+            @php
+            $attendance = $user->attendances->first();
+            @endphp
+
             <tr>
-                <td>山田　太郎</td>
-                <td>09:00</td>
-                <td>18:00</td>
-                <td>1:00</td>
-                <td>8:00</td>
+                <td>{{ $user->name }}</td>
+
                 <td>
-                    <a href="/admin/attendance/{id}">詳細</a>
+                    {{ $attendance?->clock_in
+                ? \Carbon\Carbon::parse($attendance->clock_in)->format('H:i')
+                : '-' }}
+                </td>
+
+                <td>
+                    {{ $attendance?->clock_out
+                ? \Carbon\Carbon::parse($attendance->clock_out)->format('H:i')
+                : '-' }}
+                </td>
+
+                <td>
+                    {{ $attendance
+                ? gmdate('H:i', $attendance->total_break_minutes * 60)
+                : '-' }}
+                </td>
+
+                <td>
+                    {{ $attendance
+                ? gmdate('H:i', $attendance->total_work_minutes * 60)
+                : '-' }}
+                </td>
+
+                <td>
+                    @if ($attendance)
+                    <a href="{{ route('admin.attendances.show', $attendance->id) }}">
+                        詳細
+                    </a>
+                    @else
+                    -
+                    @endif
                 </td>
             </tr>
+            @endforeach
         </tbody>
     </table>
 </div>

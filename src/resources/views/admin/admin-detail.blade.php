@@ -1,50 +1,78 @@
 @extends('layouts.app')
 
-<!-- タイトル -->
 @section('title', '管理者勤怠詳細画面')
 
-<!-- css読み込み -->
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/admin-detail.css') }}?v={{ time() }}">
 @endsection
 
-<!-- メインコンテンツ -->
-@section('content')
+@include('components.admin')
 
+@section('content')
 <div class="admin-detail-container">
     <h1 class="title">勤怠詳細</h1>
-    <form method="POST" action="admin/attendance/{id}" class="admin-detail-form">
+
+    <form method="POST"
+        action="{{ route('admin.attendances.update', $attendance->id) }}"
+        class="admin-detail-form">
+        @csrf
+
         <table class="admin-detail-table">
-            <thead>
+            <tbody>
                 <tr>
                     <th>名前</th>
-                    <td>山田　太郎</td>
+                    <td>{{ $attendance->user->name }}</td>
                 </tr>
+
                 <tr>
                     <th>日付</th>
-                    <td>2023年</td>
-                    <td>6月1日</td>
+                    <td colspan="2">
+                        {{ \Carbon\Carbon::parse($attendance->date)->format('Y年m月d日') }}
+                    </td>
                 </tr>
+
                 <tr>
                     <th>出勤・退勤</th>
-                    <td>09:00 ~ 20:00</td>
+                    <td colspan="2">
+                        <input type="time" name="clock_in"
+                            value="{{ old('clock_in', \Carbon\Carbon::parse($attendance->clock_in)->format('H:i')) }}">
+                        〜
+                        <input type="time" name="clock_out"
+                            value="{{ old('clock_out', \Carbon\Carbon::parse($attendance->clock_out)->format('H:i')) }}">
+
+                        @error('clock_in')
+                        <span class="error">{{ $message }}</span>
+                        @enderror
+                    </td>
                 </tr>
+
+                @foreach ($attendance->breakTimes as $index => $break)
                 <tr>
-                    <th>休憩</th>
-                    <td>12:00 ~ 13:00</td>
+                    <th>休憩{{ $index + 1 }}</th>
+                    <td colspan="2">
+                        <input type="time"
+                            name="break_times[{{ $index }}][start_time]"
+                            value="{{ old('break_times.'.$index.'.start_time', \Carbon\Carbon::parse($break->start_time)->format('H:i')) }}">
+                        〜
+                        <input type="time"
+                            name="break_times[{{ $index }}][end_time]"
+                            value="{{ old('break_times.'.$index.'.end_time', $break->end_time ? \Carbon\Carbon::parse($break->end_time)->format('H:i') : '') }}">
+                        @error('break_times.'.$index.'.start_time') <span class="error">{{ $message }}</span> @enderror
+                    </td>
                 </tr>
-                <tr>
-                    <th>休憩２</th>
-                    <td> ~ </td>
-                </tr>
+                @endforeach
+
                 <tr>
                     <th>備考</th>
-                    <td></td>
+                    <td colspan="2">
+                        <textarea name="reason">{{ old('reason', $attendance->reason) }}</textarea>
+                        @error('reason') <span class="error">{{ $message }}</span> @enderror
+                    </td>
                 </tr>
-            </thead>
+            </tbody>
         </table>
-    </form>
-    <a href="{{ route('admin.attendance.list') }}" class="update_button">修正</a>
 
+        <button type="submit" class="update_button">修正</button>
+    </form>
 </div>
 @endsection

@@ -11,9 +11,17 @@ class BreakTime extends Model
 
     protected $table = 'break_times';
 
-    // Attendanceリレーション
+    protected $fillable = [
+        'attendance_id',
+        'start_time',
+        'end_time',
+    ];
+
+    /**
+     * Attendance へのリレーション
+     */
     public function attendance()
     {
-        return $this->belongsTo(AttendanceRecord::class, 'attendance_id');
+        return $this->belongsTo(Attendance::class, 'attendance_id');
     }
 }

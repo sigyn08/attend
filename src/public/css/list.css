@@ -39,6 +39,7 @@
     cursor: pointer;
     padding: 6px 10px;
     color: #444;
+    text-decoration: none;
 }
 
 .month-btn:hover {
@@ -82,4 +83,15 @@
 
 .detail-link:hover {
     opacity: 0.6;
+}
+
+.month-picker-label {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    margin-right: 8px;
+}
+
+.month-picker {
+    display: none;
 }

@@ -47,3 +47,12 @@ body {
     cursor: pointer;
     transition: opacity 0.2s;
 }
+
+/* エラー文 */
+.form-error {
+    height: 18px;
+    font-size: 13px;
+    color: red;
+    margin-bottom: 20px;
+    text-align: left;
+}

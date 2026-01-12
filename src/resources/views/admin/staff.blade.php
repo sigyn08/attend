@@ -1,19 +1,17 @@
 @extends('layouts.app')
 
-<!-- タイトル -->
 @section('title', 'スタッフ一覧画面')
 
-<!-- css読み込み -->
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/staff.css') }}">
 @endsection
 
 @include('components.admin')
 
-<!-- メインコンテンツ -->
 @section('content')
 <div class="staff-container">
     <h1 class="title">スタッフ一覧</h1>
+
     <table class="staff-table">
         <thead>
             <tr>
@@ -22,12 +20,25 @@
                 <th>月次勤怠</th>
             </tr>
         </thead>
+
         <tbody>
+            @forelse($users as $user)
             <tr>
-                <td></td>
-                <td></td>
-                <td><a href="/admin/attendance/staff/{id}">詳細</a></td>
+                <td>{{ $user->name }}</td>
+                <td>{{ $user->email }}</td>
+                <td>
+                    <a href="{{ url('/admin/attendance/staff/' . $user->id) }}">
+                        詳細
+                    </a>
+                </td>
             </tr>
+            @empty
+            <tr>
+                <td colspan="3" style="text-align:center;">
+                    スタッフがいません
+                </td>
+            </tr>
+            @endforelse
         </tbody>
     </table>
 </div>

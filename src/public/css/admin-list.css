@@ -38,7 +38,34 @@
     margin-bottom: 25px;
 }
 
-/* 前月・翌月ボタン */
+.calendar-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.calendar-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.calendar-icon {
+    font-size: 20px;
+    margin-right: 8px;
+}
+
+.calendar-input {
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* フォーカス時の枠を消す */
+.calendar-input:focus {
+    outline: none;
+}
+
 .month-btn {
     border: none;
     background: none;
@@ -58,6 +85,7 @@
     display: flex;
     align-items: center;
     gap: 6px;
+    background: #fff;
 }
 
 /* テーブル */
@@ -71,7 +99,6 @@
 }
 
 .admin-list-table thead {
-    background: #f5f5f5;
     border-bottom: 2px solid #e5e5e5;
 }
 
@@ -94,4 +121,15 @@
 
 .admin-list-table td:last-child a:hover {
     text-decoration: underline;
+}
+
+body {
+    background: #f5f4f7;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+.select-date {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
 }

@@ -8,10 +8,14 @@ class CreateAttendancesTable extends Migration
 {
     public function up()
     {
-        Schema::table('attendances', function (Blueprint $table) {
-            $table->time('break_start')->nullable()->after('clock_out');
-            $table->time('break_end')->nullable()->after('break_start');
-            // break_minutes はすでにあるので追加不要
+
+        Schema::create('attendances', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->date('date');
+            $table->time('clock_in')->nullable();
+            $table->time('clock_out')->nullable();
+            $table->timestamps();
         });
     }
 

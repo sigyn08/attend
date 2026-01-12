@@ -1,0 +1,67 @@
+/* 共通 */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #ffffff;
+}
+
+/* ヘッダー */
+.header {
+    background-color: #000000;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* メインレイアウト */
+.container {
+    min-height: calc(100vh - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    text-align: center;
+}
+
+/* メッセージ */
+.message {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+/* 認証ボタン */
+.verify-button {
+    display: inline-block;
+    padding: 12px 32px;
+    background-color: #e0e0e0;
+    border: 1px solid #999999;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+/* 再送リンク */
+.resend-link {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 14px;
+    color: #007bff;
+    cursor: pointer;
+}
+
+.resend-link:hover {
+    text-decoration: underline;
+}

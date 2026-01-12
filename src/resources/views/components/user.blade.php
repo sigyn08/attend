@@ -1,14 +1,14 @@
 <header class="header">
     <div class="header__inner">
         <a class="header__logo" href="/register">
-            COACHTECH
+            <img src="{{ asset('images/logo.png') }}" alt="COACHTECH">
         </a>
     </div>
     <nav class="header__nav">
         <ul class="nav__list">
             <li class="nav__item"><a href="/attendance">勤怠</a></li>
             <li class="nav__item"><a href="/attendance/list">勤怠一覧</a></li>
-            <li class="nav__item"><a href="/stamp_correction_request/list">申請</a></li>
+            <li class="nav__item"><a href="/user/stamp_correction_request/list">申請</a></li>
             <li class="nav__item"><a href="/login">ログアウト</a></li>
         </ul>
     </nav>

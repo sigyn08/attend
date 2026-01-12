@@ -1,61 +1,92 @@
+/* コンテナ全体 */
 .approve-container {
+    width: 100%;
     max-width: 900px;
     margin: 40px auto;
-    padding: 0 20px;
+    padding: 10px;
 }
 
+/* タイトル */
 .title {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 30px;
-    position: relative;
+    border-left: 6px solid #000;
+    padding-left: 12px;
 }
 
-.title::before {
-    content: "";
-    display: inline-block;
-    width: 6px;
-    height: 26px;
-    background-color: #000;
-    margin-right: 10px;
-    vertical-align: middle;
+/* 白カード */
+.approve-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 0;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
 }
 
+/* テーブル */
 .approve-table {
     width: 100%;
     border-collapse: collapse;
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    margin-bottom: 40px;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.05);
 }
 
-/* 行スタイル */
 .approve-table th,
 .approve-table td {
-    padding: 18px 24px;
-    font-size: 14px;
+    padding: 20px 24px;
+    font-size: 15px;
+    border-bottom: 1px solid #eee;
 }
 
-/* 左ラベル部分 */
 .approve-table th {
-    width: 20%;
-    background-color: #fafafa;
-    text-align: center;
-    color: #333;
-    border-bottom: 1px solid #eee;
-    font-weight: normal;
+    width: 180px;
+    text-align: left;
+    font-weight: bold;
+    background: #fafafa;
 }
 
-/* 右側内容部分 */
-.approve-table td {
-    border-bottom: 1px solid #eee;
-    color: #333;
-}
-
-/* 最後の行はボーダー消し */
-.approve-table tr:last-child th,
-.approve-table tr:last-child td {
+/* 行の最後だけ線を消す */
+.approve-table tr:last-child td,
+.approve-table tr:last-child th {
     border-bottom: none;
+}
+
+/* 中央揃え風の左右配置 */
+.value-left {
+    margin-right: 40px;
+    font-weight: bold;
+}
+.value-right {
+    margin-left: 40px;
+    font-weight: bold;
+}
+
+.tilde {
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+/* 備考の文字 */
+.note {
+    font-size: 14px;
+    color: #333;
+}
+
+/* 承認ボタン */
+.approve_button {
+    margin: 30px 0 0 auto;
+    display: block;
+    width: 120px;
+    padding: 12px 0;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.approve-button:hover {
+    opacity: 0.8;
 }

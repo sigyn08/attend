@@ -6,8 +6,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Attendance;
+use App\Models\StampCorrectionRequest;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -15,7 +18,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'role',
+        'is_admin', // ← role の代わりにこれ
     ];
 
     protected $hidden = [
@@ -24,20 +27,13 @@ class User extends Authenticatable
     ];
 
     // 勤怠記録 (1対多)
-    public function attendanceRecords()
+    public function attendances()
     {
-        return $this->hasMany(AttendanceRecord::class);
+        return $this->hasMany(Attendance::class);
     }
 
-    // 修正申請 (1対多)
     public function correctionRequests()
     {
-        return $this->hasMany(CorrectionRequest::class);
-    }
-
-    // 管理者かチェック
-    public function isAdmin()
-    {
-        return $this->role === 'admin';
+        return $this->hasMany(StampCorrectionRequest::class);
     }
 }
