@@ -1,6 +1,6 @@
 # 環境構築
 <h2>Dockerビルド</h2>
-<h4>・git clone git@github.com:sigyn08/beginner.git</h4>
+<h4>・git clone git@github.com:sigyn08/attend.git</h4>
 <h4>・docker-compose up -d --build</h4>
 <h2>Laravel環境構築</h2>
 <h4>docker-compose exec php bash</h4>
