@@ -30,5 +30,8 @@
 <h4>name:西　怜奈</h4>
 <h4>email:user@example.com</h4>
 <h4>password:password</h4>
-
+<h2>開発環境</h2>
+<h4>ログイン画面：http://localhost/login</h4>
+<h4>管理者ログイン画面：http://localhost/admin/login</h4>
+<h4>phpMyAdmin：http://localhost:8080/index.php</h4>
 
